@@ -134,16 +134,22 @@ header {
 }
 
 /* CENTERED PRODUCT IMAGE */
+/* 30% SMALLER WITH SUBTLE GOLD OUTLINE */
 
 .hero-product {
   display: block;
-  width: min(650px, 90%);
+
+  /* Original 650px reduced by 30% */
+  width: min(455px, 63%);
+
   max-width: 100%;
   height: auto;
   margin: 30px auto;
   object-fit: contain;
 
-  border: none;
+  /* Elegant subtle gold outline */
+  border: 1px solid rgba(214, 174, 105, 0.25);
+
   border-radius: 0;
   box-shadow: none;
   background: transparent;
@@ -293,8 +299,9 @@ footer a {
     letter-spacing: .24em;
   }
 
+  /* Mobile image reduced by 30% */
   .hero-product {
-    width: 95%;
+    width: 66.5%;
     margin: 25px auto;
   }
 
