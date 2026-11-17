@@ -1,15 +1,21 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="One Beauty Stop Signature Color & Highlight Kit. Coming December 2026.">
+
+<meta name="description"
+content="One Beauty Stop Signature Color & Highlight Kit. Coming December 2026.">
 
 <title>One Beauty Stop | Coming December 2026</title>
 
 <style>
+
+/* GLOBAL COLORS */
+
 :root {
   --black: #050505;
   --gold: #d6ae69;
@@ -36,6 +42,8 @@ body {
 a {
   color: inherit;
 }
+
+/* HEADER */
 
 header {
   position: absolute;
@@ -79,6 +87,7 @@ header {
   padding: 115px 20px 80px;
   position: relative;
   overflow: hidden;
+
   background: radial-gradient(
     ellipse at 50% 45%,
     #19130c 0%,
@@ -95,6 +104,8 @@ header {
   pointer-events: none;
 }
 
+/* MAIN LOGO */
+
 .logo {
   width: min(490px, 82vw);
   height: auto;
@@ -102,6 +113,8 @@ header {
   margin: 0 auto 22px;
   mix-blend-mode: screen;
 }
+
+/* HERO TEXT */
 
 .eyebrow {
   color: var(--gold);
@@ -119,6 +132,24 @@ header {
   line-height: 1.07;
   margin: 0 0 20px;
 }
+
+/* CENTERED PRODUCT IMAGE */
+
+.hero-product {
+  display: block;
+  width: min(650px, 90%);
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  object-fit: contain;
+
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* PRODUCT DESCRIPTION */
 
 .sub {
   max-width: 560px;
@@ -150,12 +181,22 @@ header {
   color: var(--gold);
 }
 
+.button:focus-visible,
+.navlink:focus-visible,
+.wordmark:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
 .note {
   margin-top: 19px;
   color: #a99a85;
   font-size: 11px;
   letter-spacing: .08em;
 }
+
+/* GOLD DIVIDER */
 
 .divider {
   width: 70px;
@@ -165,7 +206,7 @@ header {
   margin: 36px auto 0;
 }
 
-/* INTRODUCTION */
+/* INTRODUCTION SECTION */
 
 .intro {
   text-align: center;
@@ -206,6 +247,7 @@ footer {
   color: #8f806d;
   font-size: 11px;
   letter-spacing: .09em;
+  line-height: 2;
 }
 
 footer a {
@@ -216,6 +258,7 @@ footer a {
 /* MOBILE RESPONSIVE */
 
 @media (max-width: 600px) {
+
   header {
     padding: 22px;
   }
@@ -242,8 +285,17 @@ footer a {
     padding-top: 110px;
   }
 
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 52px);
+  }
+
   .eyebrow {
     letter-spacing: .24em;
+  }
+
+  .hero-product {
+    width: 95%;
+    margin: 25px auto;
   }
 
   .button {
@@ -253,13 +305,18 @@ footer a {
   .intro {
     padding: 65px 24px;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
   <a class="wordmark" href="#top">
     ONE BEAUTY STOP
   </a>
@@ -268,84 +325,108 @@ footer a {
      href="mailto:onebeautystop.shop@gmail.com?subject=One%20Beauty%20Stop%20Pre-Order%20Inquiry">
     Pre-Orders
   </a>
+
 </header>
 
 <main id="top">
 
-  <!-- HERO SECTION -->
+<!-- HERO SECTION -->
 
-  <section class="hero"
-           aria-label="Coming December 2026">
+<section class="hero"
+         aria-label="Coming December 2026">
 
-    <img
-      class="logo"
-      src="logo.webp"
-      alt="One Beauty Stop gold lotus logo"
-    >
+  <!-- BRAND LOGO -->
 
-    <p class="eyebrow">
-      The art of beautiful color
-    </p>
+  <img
+    class="logo"
+    src="logo.webp"
+    alt="One Beauty Stop gold lotus logo"
+  >
 
-    <h1>
-      Coming<br>
-      December 2026
-    </h1>
+  <!-- TAGLINE -->
 
-    <p class="sub">
-      Introducing the
-      <strong>Signature Color &amp; Highlight Kit</strong>.
-      <br>
-      Thoughtfully curated tools for the artists
-      behind every beautiful transformation.
-    </p>
+  <p class="eyebrow">
+    The art of beautiful color
+  </p>
 
-    <a
-      class="button"
-      href="mailto:onebeautystop.shop@gmail.com?subject=Signature%20Color%20%26%20Highlight%20Kit%20Pre-Order&amp;body=Hello%20One%20Beauty%20Stop%2C%0A%0AI%27m%20interested%20in%20pre-ordering%20the%20Signature%20Color%20%26%20Highlight%20Kit.%0A%0APlease%20send%20me%20the%20details.%0A%0AThank%20you!"
-    >
-      Inquire About Pre-Orders
-    </a>
+  <!-- LAUNCH ANNOUNCEMENT -->
 
-    <p class="note">
-      Pre-order inquiries now welcome
-    </p>
+  <h1>
+    Coming<br>
+    December 2026
+  </h1>
 
-    <div class="divider"></div>
+  <!-- CENTERED PRODUCT IMAGE -->
 
-  </section>
+  <img
+    class="hero-product"
+    src="product-image.webp"
+    alt="One Beauty Stop Signature Color and Highlight Kit"
+    loading="eager"
+  >
 
-  <!-- INTRODUCTION SECTION -->
+  <!-- PRODUCT DESCRIPTION -->
 
-  <section class="intro">
+  <p class="sub">
+    Introducing the
+    <strong>Signature Color &amp; Highlight Kit</strong>.
+    <br>
+    Thoughtfully curated tools for the artists
+    behind every beautiful transformation.
+  </p>
 
-    <p class="overline">
-      Created for colorists
-    </p>
+  <!-- PRE-ORDER BUTTON -->
 
-    <h2>
-      Everything you need to create, beautifully.
-    </h2>
+  <a
+    class="button"
+    href="mailto:onebeautystop.shop@gmail.com?subject=Signature%20Color%20%26%20Highlight%20Kit%20Pre-Order&amp;body=Hello%20One%20Beauty%20Stop%2C%0A%0AI%27m%20interested%20in%20pre-ordering%20the%20Signature%20Color%20%26%20Highlight%20Kit.%0A%0APlease%20send%20me%20the%20details.%0A%0AThank%20you!"
+  >
+    Inquire About Pre-Orders
+  </a>
 
-    <p>
-      Elevate your color and highlighting experience
-      with a professional collection designed to
-      bring your creative vision to life.
-      One kit. Endless possibilities.
-    </p>
+  <p class="note">
+    Pre-order inquiries now welcome
+  </p>
 
-  </section>
+  <div class="divider"></div>
+
+</section>
+
+<!-- INTRODUCTION SECTION -->
+
+<section class="intro">
+
+  <p class="overline">
+    Created for colorists
+  </p>
+
+  <h2>
+    Everything you need to create, beautifully.
+  </h2>
+
+  <p>
+    Elevate your color and highlighting experience
+    with a professional collection designed to
+    bring your creative vision to life.
+    One kit. Endless possibilities.
+  </p>
+
+</section>
 
 </main>
 
 <!-- FOOTER -->
 
 <footer>
+
   © 2026 ONE BEAUTY STOP
+
   &nbsp; · &nbsp;
+
   <a href="mailto:onebeautystop.shop@gmail.com">
     onebeautystop.shop@gmail.com
   </a>
+
 </footer>
 
 </body>
