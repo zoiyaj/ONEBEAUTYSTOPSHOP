@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="One Beauty Stop Signature Color & Highlight Kit. Coming December 2026.">
+
+<title>One Beauty Stop | Coming December 2026</title>
+
+<style>
+:root {
+  --black: #050505;
+  --gold: #d6ae69;
+  --muted: #b9a58a;
+  --white: #f6f0e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px clamp(22px, 6vw, 90px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wordmark {
+  font-size: 12px;
+  letter-spacing: .27em;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navlink {
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 7px;
+  color: var(--gold);
+}
+
+/* HERO SECTION */
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 115px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #19130c 0%,
+    #090807 35%,
+    #050505 73%
+  );
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(214,174,105,.13);
+  pointer-events: none;
+}
+
+.logo {
+  width: min(490px, 82vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 22px;
+  mix-blend-mode: screen;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: .035em;
+  font-size: clamp(38px, 6.5vw, 86px);
+  line-height: 1.07;
+  margin: 0 0 20px;
+}
+
+.sub {
+  max-width: 560px;
+  font-size: clamp(13px, 1.5vw, 16px);
+  line-height: 1.9;
+  color: #cbbfae;
+  margin: 0 auto 32px;
+  letter-spacing: .035em;
+}
+
+/* PRE-ORDER BUTTON */
+
+.button {
+  display: inline-block;
+  padding: 17px 34px;
+  border: 1px solid var(--gold);
+  color: #090806;
+  background: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.note {
+  margin-top: 19px;
+  color: #a99a85;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.divider {
+  width: 70px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .6;
+  margin: 36px auto 0;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  text-align: center;
+  padding: 80px 24px 90px;
+  border-top: 1px solid #211b15;
+}
+
+.intro .overline {
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.intro h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(27px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.intro p {
+  max-width: 610px;
+  margin: 0 auto;
+  color: #b8ac9b;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #241e16;
+  padding: 28px 24px;
+  text-align: center;
+  color: #8f806d;
+  font-size: 11px;
+  letter-spacing: .09em;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+  header {
+    padding: 22px;
+  }
+
+  .wordmark {
+    font-size: 10px;
+    letter-spacing: .15em;
+  }
+
+  .navlink {
+    font-size: 10px;
+  }
+
+  .hero::before {
+    inset: 10px;
+  }
+
+  .logo {
+    width: min(390px, 86vw);
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    padding-top: 110px;
+  }
+
+  .eyebrow {
+    letter-spacing: .24em;
+  }
+
+  .button {
+    width: min(100%, 320px);
+  }
+
+  .intro {
+    padding: 65px 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="wordmark" href="#top">
+    ONE BEAUTY STOP
+  </a>
+
+  <a class="navlink"
+     href="mailto:onebeautystop.shop@gmail.com?subject=One%20Beauty%20Stop%20Pre-Order%20Inquiry">
+    Pre-Orders
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- HERO SECTION -->
+
+  <section class="hero"
+           aria-label="Coming December 2026">
+
+    <img
+      class="logo"
+      src="logo.webp"
+      alt="One Beauty Stop gold lotus logo"
+    >
+
+    <p class="eyebrow">
+      The art of beautiful color
+    </p>
+
+    <h1>
+      Coming<br>
+      December 2026
+    </h1>
+
+    <p class="sub">
+      Introducing the
+      <strong>Signature Color &amp; Highlight Kit</strong>.
+      <br>
+      Thoughtfully curated tools for the artists
+      behind every beautiful transformation.
+    </p>
+
+    <a
+      class="button"
+      href="mailto:onebeautystop.shop@gmail.com?subject=Signature%20Color%20%26%20Highlight%20Kit%20Pre-Order&amp;body=Hello%20One%20Beauty%20Stop%2C%0A%0AI%27m%20interested%20in%20pre-ordering%20the%20Signature%20Color%20%26%20Highlight%20Kit.%0A%0APlease%20send%20me%20the%20details.%0A%0AThank%20you!"
+    >
+      Inquire About Pre-Orders
+    </a>
+
+    <p class="note">
+      Pre-order inquiries now welcome
+    </p>
+
+    <div class="divider"></div>
+
+  </section>
+
+  <!-- INTRODUCTION SECTION -->
+
+  <section class="intro">
+
+    <p class="overline">
+      Created for colorists
+    </p>
+
+    <h2>
+      Everything you need to create, beautifully.
+    </h2>
+
+    <p>
+      Elevate your color and highlighting experience
+      with a professional collection designed to
+      bring your creative vision to life.
+      One kit. Endless possibilities.
+    </p>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  © 2026 ONE BEAUTY STOP
+  &nbsp; · &nbsp;
+  <a href="mailto:onebeautystop.shop@gmail.com">
+    onebeautystop.shop@gmail.com
+  </a>
+</footer>
+
+</body>
+</html>
