@@ -61,6 +61,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 .wordmark {
@@ -71,6 +72,34 @@ header {
   font-weight: 600;
 }
 
+/* TOP RIGHT NAVIGATION */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity .25s ease;
+}
+
+.nav-social svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.nav-social:hover {
+  opacity: .65;
+}
+
 .navlink {
   font-size: 11px;
   letter-spacing: .18em;
@@ -79,6 +108,7 @@ header {
   border-bottom: 1px solid var(--gold);
   padding-bottom: 7px;
   color: var(--gold);
+  white-space: nowrap;
 }
 
 /* HERO SECTION */
@@ -193,14 +223,22 @@ header {
   letter-spacing: .08em;
 }
 
-/* INSTAGRAM SOCIAL LINK */
+/* INSTAGRAM AND TIKTOK SOCIAL LINKS */
 
 .social {
   margin: 25px auto 0;
   text-align: center;
 }
 
-.instagram-link {
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -212,14 +250,13 @@ header {
   transition: opacity .25s ease;
 }
 
-.instagram-link svg {
+.social-link svg {
   width: 22px;
   height: 22px;
-  stroke: currentColor;
   flex-shrink: 0;
 }
 
-.instagram-link:hover {
+.social-link:hover {
   opacity: .65;
 }
 
@@ -228,7 +265,7 @@ header {
   font-size: 11px;
   letter-spacing: .06em;
   line-height: 1.6;
-  margin: 10px 0 0;
+  margin: 15px 0 0;
 }
 
 /* GOLD DIVIDER */
@@ -371,7 +408,7 @@ header {
   color: var(--gold);
 }
 
-/* VIDEO SECTION SOCIAL */
+/* VIDEO SECTION SOCIAL LINKS */
 
 .video-social {
   margin: 25px auto 0;
@@ -426,6 +463,7 @@ footer a:hover {
 
   header {
     padding: 22px;
+    gap: 10px;
   }
 
   .wordmark {
@@ -433,8 +471,19 @@ footer a:hover {
     letter-spacing: .15em;
   }
 
+  .header-nav {
+    gap: 13px;
+  }
+
+  .nav-social svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .navlink {
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: .10em;
+    padding-bottom: 4px;
   }
 
   .hero::before {
@@ -532,6 +581,25 @@ footer a:hover {
 
 }
 
+/* EXTRA SMALL MOBILE SCREENS */
+
+@media (max-width: 360px) {
+
+  header {
+    padding: 20px 15px;
+  }
+
+  .header-nav {
+    gap: 10px;
+  }
+
+  .wordmark {
+    font-size: 9px;
+    letter-spacing: .10em;
+  }
+
+}
+
 /* REDUCED MOTION PREFERENCE */
 
 @media (prefers-reduced-motion: reduce) {
@@ -551,6 +619,48 @@ footer a:hover {
 
 <body>
 
+<!-- REUSABLE SOCIAL MEDIA ICONS -->
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="0"
+  height="0"
+  aria-hidden="true"
+  style="position:absolute;overflow:hidden;"
+>
+
+  <!-- INSTAGRAM ICON -->
+
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+
+    <g
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="18" cy="6" r="1"
+              fill="currentColor" stroke="none"/>
+    </g>
+
+  </symbol>
+
+  <!-- TIKTOK ICON -->
+
+  <symbol id="icon-tiktok" viewBox="0 0 24 24">
+
+    <path
+      fill="currentColor"
+      d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 1 1-2-2.75V9.42a6.33 6.33 0 1 0 5.445 6.26V8.75a8.182 8.182 0 0 0 4.773 1.526V6.83a4.83 4.83 0 0 1-1.003-.144z"
+    />
+
+  </symbol>
+
+</svg>
+
 <!-- HEADER -->
 
 <header>
@@ -559,10 +669,54 @@ footer a:hover {
     ONE BEAUTY STOP
   </a>
 
-  <a class="navlink"
-     href="mailto:onebeautystop.shop@gmail.com?subject=One%20Beauty%20Stop%20Pre-Order%20Inquiry">
-    Pre-Orders
-  </a>
+  <!-- TOP RIGHT NAVIGATION -->
+
+  <nav class="header-nav" aria-label="Main navigation">
+
+    <!-- INSTAGRAM -->
+
+    <a
+      class="nav-social"
+      href="https://www.instagram.com/onebeautystop.shop/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="One Beauty Stop on Instagram"
+      title="Instagram"
+    >
+
+      <svg aria-hidden="true">
+        <use href="#icon-instagram"></use>
+      </svg>
+
+    </a>
+
+    <!-- TIKTOK -->
+
+    <a
+      class="nav-social"
+      href="https://www.tiktok.com/@onebeautystop.shop"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="One Beauty Stop on TikTok"
+      title="TikTok"
+    >
+
+      <svg aria-hidden="true">
+        <use href="#icon-tiktok"></use>
+      </svg>
+
+    </a>
+
+    <!-- PRE-ORDERS -->
+
+    <a
+      class="navlink"
+      href="mailto:onebeautystop.shop@gmail.com?subject=One%20Beauty%20Stop%20Pre-Order%20Inquiry"
+    >
+      Pre-Orders
+    </a>
+
+  </nav>
 
 </header>
 
@@ -626,36 +780,49 @@ footer a:hover {
     Pre-order inquiries now welcome
   </p>
 
-  <!-- INSTAGRAM SOCIAL LINK -->
+  <!-- MAIN SOCIAL MEDIA LINKS -->
 
   <div class="social">
 
-    <a
-      class="instagram-link"
-      href="https://www.instagram.com/onebeautystop.shop/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Follow One Beauty Stop on Instagram"
-    >
+    <div class="social-links">
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social-link"
+        href="https://www.instagram.com/onebeautystop.shop/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow One Beauty Stop on Instagram"
       >
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="18" cy="6" r="1"
-                fill="currentColor" stroke="none"/>
-      </svg>
 
-      @onebeautystop.shop
+        <svg aria-hidden="true">
+          <use href="#icon-instagram"></use>
+        </svg>
 
-    </a>
+        @onebeautystop.shop
+
+      </a>
+
+      <!-- TIKTOK -->
+
+      <a
+        class="social-link"
+        href="https://www.tiktok.com/@onebeautystop.shop"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow One Beauty Stop on TikTok"
+      >
+
+        <svg aria-hidden="true">
+          <use href="#icon-tiktok"></use>
+        </svg>
+
+        @onebeautystop.shop
+
+      </a>
+
+    </div>
 
     <p class="social-note">
       Follow us for launch updates &amp; product previews
@@ -719,7 +886,6 @@ footer a:hover {
     <article class="video-card">
 
       <video
-        autoplay
         muted
         loop
         playsinline
@@ -739,7 +905,6 @@ footer a:hover {
     <article class="video-card">
 
       <video
-        autoplay
         muted
         loop
         playsinline
@@ -759,7 +924,6 @@ footer a:hover {
     <article class="video-card">
 
       <video
-        autoplay
         muted
         loop
         playsinline
@@ -785,41 +949,54 @@ footer a:hover {
       class="playback-button"
       id="playback-toggle"
     >
-      &#10074;&#10074; Pause videos
+      &#9654; Play videos
     </button>
 
   </div>
 
-  <!-- FOLLOW ON INSTAGRAM -->
+  <!-- VIDEO SECTION SOCIAL MEDIA LINKS -->
 
   <div class="video-social">
 
-    <a
-      class="instagram-link"
-      href="https://www.instagram.com/onebeautystop.shop/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Follow One Beauty Stop on Instagram"
-    >
+    <div class="social-links">
 
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social-link"
+        href="https://www.instagram.com/onebeautystop.shop/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow One Beauty Stop on Instagram"
       >
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="18" cy="6" r="1"
-                fill="currentColor" stroke="none"/>
-      </svg>
 
-      @onebeautystop.shop
+        <svg aria-hidden="true">
+          <use href="#icon-instagram"></use>
+        </svg>
 
-    </a>
+        @onebeautystop.shop
+
+      </a>
+
+      <!-- TIKTOK -->
+
+      <a
+        class="social-link"
+        href="https://www.tiktok.com/@onebeautystop.shop"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow One Beauty Stop on TikTok"
+      >
+
+        <svg aria-hidden="true">
+          <use href="#icon-tiktok"></use>
+        </svg>
+
+        @onebeautystop.shop
+
+      </a>
+
+    </div>
 
     <p class="social-note">
       Follow us for product previews, inspiration
@@ -852,12 +1029,26 @@ footer a:hover {
 
     <span class="footer-dot">·</span>
 
+    <!-- INSTAGRAM -->
+
     <a
       href="https://www.instagram.com/onebeautystop.shop/"
       target="_blank"
       rel="noopener noreferrer"
     >
       Instagram
+    </a>
+
+    <span class="footer-dot">·</span>
+
+    <!-- TIKTOK -->
+
+    <a
+      href="https://www.tiktok.com/@onebeautystop.shop"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TikTok
     </a>
 
   </div>
@@ -953,13 +1144,9 @@ playbackButton.addEventListener('click', () => {
 
 });
 
-/* RESPECT REDUCED MOTION SETTINGS */
+/* AUTOMATIC VIDEO PLAYBACK */
 
 if (reducedMotion.matches) {
-
-  videos.forEach(video => {
-    video.autoplay = false;
-  });
 
   pauseVideos();
 
@@ -969,13 +1156,11 @@ if (reducedMotion.matches) {
 
 }
 
+/* RESPECT REDUCED MOTION SETTINGS */
+
 reducedMotion.addEventListener('change', event => {
 
   if (event.matches) {
-
-    videos.forEach(video => {
-      video.autoplay = false;
-    });
 
     pauseVideos();
 
