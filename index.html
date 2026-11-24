@@ -10,7 +10,7 @@
 <meta name="description"
 content="One Beauty Stop Signature Color & Highlight Kit. Coming December 2026.">
 
-<title>One Beauty Stop | Coming December 2026</title>
+<title>One Beauty Stop | Coming Soon</title>
 
 <style>
 
@@ -41,6 +41,12 @@ body {
 
 a {
   color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
 }
 
 /* HEADER */
@@ -134,22 +140,15 @@ header {
 }
 
 /* CENTERED PRODUCT IMAGE */
-/* 30% SMALLER WITH SUBTLE GOLD OUTLINE */
 
 .hero-product {
   display: block;
-
-  /* Original 650px reduced by 30% */
   width: min(455px, 63%);
-
   max-width: 100%;
   height: auto;
   margin: 30px auto;
   object-fit: contain;
-
-  /* Elegant subtle gold outline */
-  border: 1px solid rgba(214, 174, 105, 0.25);
-
+  border: 1px solid rgba(214,174,105,.25);
   border-radius: 0;
   box-shadow: none;
   background: transparent;
@@ -187,19 +186,49 @@ header {
   color: var(--gold);
 }
 
-.button:focus-visible,
-.navlink:focus-visible,
-.wordmark:focus-visible,
-footer a:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 5px;
-}
-
 .note {
   margin-top: 19px;
   color: #a99a85;
   font-size: 11px;
   letter-spacing: .08em;
+}
+
+/* INSTAGRAM SOCIAL LINK */
+
+.social {
+  margin: 25px auto 0;
+  text-align: center;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: opacity .25s ease;
+}
+
+.instagram-link svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.instagram-link:hover {
+  opacity: .65;
+}
+
+.social-note {
+  color: #a99a85;
+  font-size: 11px;
+  letter-spacing: .06em;
+  line-height: 1.6;
+  margin: 10px 0 0;
 }
 
 /* GOLD DIVIDER */
@@ -220,7 +249,7 @@ footer a:focus-visible {
   border-top: 1px solid #211b15;
 }
 
-.intro .overline {
+.overline {
   font-size: 11px;
   letter-spacing: .3em;
   color: var(--gold);
@@ -236,12 +265,120 @@ footer a:focus-visible {
   max-width: 700px;
 }
 
-.intro p {
+.intro p:not(.overline) {
   max-width: 610px;
   margin: 0 auto;
   color: #b8ac9b;
   line-height: 1.9;
   font-size: 14px;
+}
+
+/* VIDEO SECTION */
+
+.video-section {
+  text-align: center;
+  padding: 80px 24px 90px;
+  border-top: 1px solid #211b15;
+
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    #100d09 0%,
+    #050505 75%
+  );
+}
+
+.video-section h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 400;
+  letter-spacing: .035em;
+  margin: 20px auto;
+}
+
+.video-description {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #b8ac9b;
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: .035em;
+}
+
+/* THREE VIDEO GRID */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* GOLD VIDEO FRAMES */
+
+.video-card {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 9 / 16;
+  border: 1px solid rgba(214,174,105,.40);
+  background: #050505;
+  overflow: hidden;
+
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.video-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 18px rgba(214,174,105,.15);
+}
+
+/* PORTRAIT MP4 VIDEOS */
+
+.video-card video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center;
+  background: #050505;
+  border: none;
+}
+
+/* PAUSE AND PLAY BUTTON */
+
+.video-controls {
+  margin: 22px auto 0;
+}
+
+.playback-button {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: color .25s ease;
+}
+
+.playback-button:hover {
+  color: var(--gold);
+}
+
+/* VIDEO SECTION SOCIAL */
+
+.video-social {
+  margin: 25px auto 0;
+}
+
+.swipe-note {
+  display: none;
 }
 
 /* FOOTER */
@@ -259,6 +396,28 @@ footer {
 footer a {
   color: var(--gold);
   text-decoration: none;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+}
+
+footer a:hover {
+  opacity: .7;
+}
+
+/* TABLET RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .video-grid {
+    gap: 14px;
+  }
+
 }
 
 /* MOBILE RESPONSIVE */
@@ -299,7 +458,6 @@ footer a {
     letter-spacing: .24em;
   }
 
-  /* Mobile image reduced by 30% */
   .hero-product {
     width: 66.5%;
     margin: 25px auto;
@@ -307,10 +465,83 @@ footer a {
 
   .button {
     width: min(100%, 320px);
+    padding: 17px 12px;
+    letter-spacing: .12em;
+    overflow-wrap: anywhere;
   }
 
   .intro {
     padding: 65px 24px;
+  }
+
+  .video-section {
+    padding: 65px 0;
+  }
+
+  .video-section > .overline,
+  .video-section > h2,
+  .video-description {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* SWIPEABLE MOBILE VIDEO ROW */
+
+  .video-grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    padding: 0 24px 18px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #77603b #090807;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .video-card {
+    flex: 0 0 min(76vw, 300px);
+    scroll-snap-align: start;
+    aspect-ratio: 9 / 16;
+  }
+
+  .swipe-note {
+    display: block;
+    margin: 0 auto 20px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  .video-social {
+    padding: 0 24px;
+    margin-top: 25px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-dot {
+    display: none;
+  }
+
+}
+
+/* REDUCED MOTION PREFERENCE */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
   }
 
 }
@@ -395,6 +626,43 @@ footer a {
     Pre-order inquiries now welcome
   </p>
 
+  <!-- INSTAGRAM SOCIAL LINK -->
+
+  <div class="social">
+
+    <a
+      class="instagram-link"
+      href="https://www.instagram.com/onebeautystop.shop/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Follow One Beauty Stop on Instagram"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="18" cy="6" r="1"
+                fill="currentColor" stroke="none"/>
+      </svg>
+
+      @onebeautystop.shop
+
+    </a>
+
+    <p class="social-note">
+      Follow us for launch updates &amp; product previews
+    </p>
+
+  </div>
+
   <div class="divider"></div>
 
 </section>
@@ -413,10 +681,154 @@ footer a {
 
   <p>
     Elevate your color and highlighting experience
-    with a professional collection designed to
+    with a professional kit designed to
     bring your creative vision to life.
     One kit. Endless possibilities.
   </p>
+
+</section>
+
+<!-- VIDEO SECTION -->
+
+<section class="video-section" id="videos">
+
+  <p class="overline">
+    Discover the Kit
+  </p>
+
+  <h2>
+    Artistry in Motion
+  </h2>
+
+  <p class="video-description">
+    Experience the tools behind every beautiful
+    transformation. Designed for colorists.
+    Inspired by creativity.
+  </p>
+
+  <p class="swipe-note">
+    Swipe to explore &rarr;
+  </p>
+
+  <!-- THREE AUTOPLAY LOOPING VIDEOS -->
+
+  <div class="video-grid">
+
+    <!-- VIDEO 1 -->
+
+    <article class="video-card">
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="One Beauty Stop product showcase video 1"
+      >
+        <source src="video1.mp4" type="video/mp4">
+
+        Your browser does not support video playback.
+
+      </video>
+
+    </article>
+
+    <!-- VIDEO 2 -->
+
+    <article class="video-card">
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="One Beauty Stop product showcase video 2"
+      >
+        <source src="video2.mp4" type="video/mp4">
+
+        Your browser does not support video playback.
+
+      </video>
+
+    </article>
+
+    <!-- VIDEO 3 -->
+
+    <article class="video-card">
+
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="One Beauty Stop product showcase video 3"
+      >
+        <source src="video3.mp4" type="video/mp4">
+
+        Your browser does not support video playback.
+
+      </video>
+
+    </article>
+
+  </div>
+
+  <!-- PAUSE / PLAY ALL VIDEOS -->
+
+  <div class="video-controls">
+
+    <button
+      type="button"
+      class="playback-button"
+      id="playback-toggle"
+    >
+      &#10074;&#10074; Pause videos
+    </button>
+
+  </div>
+
+  <!-- FOLLOW ON INSTAGRAM -->
+
+  <div class="video-social">
+
+    <a
+      class="instagram-link"
+      href="https://www.instagram.com/onebeautystop.shop/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Follow One Beauty Stop on Instagram"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="18" cy="6" r="1"
+                fill="currentColor" stroke="none"/>
+      </svg>
+
+      @onebeautystop.shop
+
+    </a>
+
+    <p class="social-note">
+      Follow us for product previews, inspiration
+      &amp; launch updates.
+    </p>
+
+  </div>
+
+  <div class="divider"></div>
 
 </section>
 
@@ -426,15 +838,154 @@ footer a {
 
 <footer>
 
-  © 2026 ONE BEAUTY STOP
+  <div class="footer-content">
 
-  &nbsp; · &nbsp;
+    <span>
+      © 2026 ONE BEAUTY STOP
+    </span>
 
-  <a href="mailto:onebeautystop.shop@gmail.com">
-    onebeautystop.shop@gmail.com
-  </a>
+    <span class="footer-dot">·</span>
+
+    <a href="mailto:onebeautystop.shop@gmail.com">
+      onebeautystop.shop@gmail.com
+    </a>
+
+    <span class="footer-dot">·</span>
+
+    <a
+      href="https://www.instagram.com/onebeautystop.shop/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+
+  </div>
 
 </footer>
+
+<!-- VIDEO PLAYBACK SCRIPT -->
+
+<script>
+
+const videos = Array.from(
+  document.querySelectorAll('.video-card video')
+);
+
+const playbackButton = document.getElementById(
+  'playback-toggle'
+);
+
+const reducedMotion = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+);
+
+function updatePlaybackButton() {
+
+  const isPlaying = videos.some(
+    video => !video.paused && !video.ended
+  );
+
+  playbackButton.textContent = isPlaying
+    ? '❚❚ Pause videos'
+    : '▶ Play videos';
+
+}
+
+function pauseVideos() {
+
+  videos.forEach(video => video.pause());
+
+  updatePlaybackButton();
+
+}
+
+function playVideos() {
+
+  videos.forEach(video => {
+
+    video.muted = true;
+
+    video.play().catch(() => {
+      updatePlaybackButton();
+    });
+
+  });
+
+}
+
+videos.forEach(video => {
+
+  video.muted = true;
+
+  video.addEventListener(
+    'play',
+    updatePlaybackButton
+  );
+
+  video.addEventListener(
+    'pause',
+    updatePlaybackButton
+  );
+
+  video.addEventListener(
+    'error',
+    updatePlaybackButton
+  );
+
+});
+
+playbackButton.addEventListener('click', () => {
+
+  const isPlaying = videos.some(
+    video => !video.paused && !video.ended
+  );
+
+  if (isPlaying) {
+
+    pauseVideos();
+
+  } else {
+
+    playVideos();
+
+  }
+
+});
+
+/* RESPECT REDUCED MOTION SETTINGS */
+
+if (reducedMotion.matches) {
+
+  videos.forEach(video => {
+    video.autoplay = false;
+  });
+
+  pauseVideos();
+
+} else {
+
+  playVideos();
+
+}
+
+reducedMotion.addEventListener('change', event => {
+
+  if (event.matches) {
+
+    videos.forEach(video => {
+      video.autoplay = false;
+    });
+
+    pauseVideos();
+
+  }
+
+});
+
+updatePlaybackButton();
+
+</script>
 
 </body>
 </html>
