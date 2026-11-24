@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#050505">
 
 <meta name="description"
-content="One Beauty Stop Signature Color & Highlight Kit. Coming December 2026.">
+content="One Beauty Stop Signature Color & Highlight Kit. Coming Soon.">
 
 <title>One Beauty Stop | Coming Soon</title>
 
@@ -169,19 +169,84 @@ header {
   margin: 0 0 20px;
 }
 
-/* CENTERED PRODUCT IMAGE */
+/* HERO VIDEO SECTION */
 
-.hero-product {
+.hero-videos {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto 30px;
+}
+
+/* THREE VIDEO GRID */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* GOLD VIDEO FRAMES */
+
+.video-card {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 9 / 16;
+  border: 1px solid rgba(214,174,105,.40);
+  background: #050505;
+  overflow: hidden;
+
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.video-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 18px rgba(214,174,105,.15);
+}
+
+/* PORTRAIT MP4 VIDEOS */
+
+.video-card video {
   display: block;
-  width: min(455px, 63%);
-  max-width: 100%;
-  height: auto;
-  margin: 30px auto;
-  object-fit: contain;
-  border: 1px solid rgba(214,174,105,.25);
-  border-radius: 0;
-  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center;
+  background: #050505;
+  border: none;
+}
+
+/* PAUSE AND PLAY BUTTON */
+
+.video-controls {
+  margin: 15px auto 0;
+}
+
+.playback-button {
   background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: color .25s ease;
+}
+
+.playback-button:hover {
+  color: var(--gold);
+}
+
+.swipe-note {
+  display: none;
 }
 
 /* PRODUCT DESCRIPTION */
@@ -310,9 +375,9 @@ header {
   font-size: 14px;
 }
 
-/* VIDEO SECTION */
+/* PRODUCT SHOWCASE SECTION */
 
-.video-section {
+.product-section {
   text-align: center;
   padding: 80px 24px 90px;
   border-top: 1px solid #211b15;
@@ -324,7 +389,7 @@ header {
   );
 }
 
-.video-section h2 {
+.product-section h2 {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 400;
@@ -332,90 +397,34 @@ header {
   margin: 20px auto;
 }
 
-.video-description {
+.product-description {
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 35px;
   color: #b8ac9b;
   font-size: 14px;
   line-height: 1.9;
   letter-spacing: .035em;
 }
 
-/* THREE VIDEO GRID */
+/* CENTERED PRODUCT IMAGE */
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  max-width: 960px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-/* GOLD VIDEO FRAMES */
-
-.video-card {
-  position: relative;
-  min-width: 0;
-  aspect-ratio: 9 / 16;
-  border: 1px solid rgba(214,174,105,.40);
-  background: #050505;
-  overflow: hidden;
-
-  transition:
-    border-color .3s ease,
-    box-shadow .3s ease;
-}
-
-.video-card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 0 18px rgba(214,174,105,.15);
-}
-
-/* PORTRAIT MP4 VIDEOS */
-
-.video-card video {
+.hero-product {
   display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  object-position: center;
-  background: #050505;
-  border: none;
-}
-
-/* PAUSE AND PLAY BUTTON */
-
-.video-controls {
-  margin: 22px auto 0;
-}
-
-.playback-button {
+  width: min(455px, 63%);
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  object-fit: contain;
+  border: 1px solid rgba(214,174,105,.25);
+  border-radius: 0;
+  box-shadow: none;
   background: transparent;
-  border: 0;
-  color: var(--muted);
-  font-family: inherit;
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 10px 15px;
-  transition: color .25s ease;
 }
 
-.playback-button:hover {
-  color: var(--gold);
-}
+/* PRODUCT SECTION SOCIAL LINKS */
 
-/* VIDEO SECTION SOCIAL LINKS */
-
-.video-social {
-  margin: 25px auto 0;
-}
-
-.swipe-note {
-  display: none;
+.product-social {
+  margin: 35px auto 0;
 }
 
 /* FOOTER */
@@ -507,42 +516,20 @@ footer a:hover {
     letter-spacing: .24em;
   }
 
-  .hero-product {
-    width: 66.5%;
-    margin: 25px auto;
-  }
+  /* SWIPEABLE HERO VIDEOS */
 
-  .button {
-    width: min(100%, 320px);
-    padding: 17px 12px;
-    letter-spacing: .12em;
-    overflow-wrap: anywhere;
+  .hero-videos {
+    width: 100%;
+    margin: 15px auto 25px;
   }
-
-  .intro {
-    padding: 65px 24px;
-  }
-
-  .video-section {
-    padding: 65px 0;
-  }
-
-  .video-section > .overline,
-  .video-section > h2,
-  .video-description {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  /* SWIPEABLE MOBILE VIDEO ROW */
 
   .video-grid {
     display: flex;
     gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: 24px;
-    padding: 0 24px 18px;
+    scroll-padding-inline: 10px;
+    padding: 0 10px 18px;
 
     scrollbar-width: thin;
     scrollbar-color: #77603b #090807;
@@ -565,8 +552,27 @@ footer a:hover {
     text-transform: uppercase;
   }
 
-  .video-social {
-    padding: 0 24px;
+  .button {
+    width: min(100%, 320px);
+    padding: 17px 12px;
+    letter-spacing: .12em;
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    padding: 65px 24px;
+  }
+
+  .product-section {
+    padding: 65px 24px;
+  }
+
+  .hero-product {
+    width: 66.5%;
+    margin: 25px auto;
+  }
+
+  .product-social {
     margin-top: 25px;
   }
 
@@ -725,7 +731,7 @@ footer a:hover {
 <!-- HERO SECTION -->
 
 <section class="hero"
-         aria-label="Coming December 2026">
+         aria-label="Coming Soon">
 
   <!-- BRAND LOGO -->
 
@@ -744,18 +750,93 @@ footer a:hover {
   <!-- LAUNCH ANNOUNCEMENT -->
 
   <h1>
-    Coming<br>
-    December 2026
+    Coming Soon
   </h1>
 
-  <!-- CENTERED PRODUCT IMAGE -->
+  <!-- THREE AUTOPLAY LOOPING VIDEOS -->
 
-  <img
-    class="hero-product"
-    src="product-image.webp"
-    alt="One Beauty Stop Signature Color and Highlight Kit"
-    loading="eager"
-  >
+  <div class="hero-videos" id="videos">
+
+    <p class="swipe-note">
+      Swipe to explore &rarr;
+    </p>
+
+    <div class="video-grid">
+
+      <!-- VIDEO 1 -->
+
+      <article class="video-card">
+
+        <video
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="One Beauty Stop product showcase video 1"
+        >
+          <source src="video1.mp4" type="video/mp4">
+
+          Your browser does not support video playback.
+
+        </video>
+
+      </article>
+
+      <!-- VIDEO 2 -->
+
+      <article class="video-card">
+
+        <video
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="One Beauty Stop product showcase video 2"
+        >
+          <source src="video2.mp4" type="video/mp4">
+
+          Your browser does not support video playback.
+
+        </video>
+
+      </article>
+
+      <!-- VIDEO 3 -->
+
+      <article class="video-card">
+
+        <video
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label="One Beauty Stop product showcase video 3"
+        >
+          <source src="video3.mp4" type="video/mp4">
+
+          Your browser does not support video playback.
+
+        </video>
+
+      </article>
+
+    </div>
+
+    <!-- PAUSE / PLAY ALL VIDEOS -->
+
+    <div class="video-controls">
+
+      <button
+        type="button"
+        class="playback-button"
+        id="playback-toggle"
+      >
+        &#9654; Play videos
+      </button>
+
+    </div>
+
+  </div>
 
   <!-- PRODUCT DESCRIPTION -->
 
@@ -855,108 +936,36 @@ footer a:hover {
 
 </section>
 
-<!-- VIDEO SECTION -->
+<!-- PRODUCT SHOWCASE SECTION -->
 
-<section class="video-section" id="videos">
+<section class="product-section" id="product">
 
   <p class="overline">
     Discover the Kit
   </p>
 
   <h2>
-    Artistry in Motion
+    The Signature Kit
   </h2>
 
-  <p class="video-description">
+  <p class="product-description">
     Experience the tools behind every beautiful
     transformation. Designed for colorists.
     Inspired by creativity.
   </p>
 
-  <p class="swipe-note">
-    Swipe to explore &rarr;
-  </p>
+  <!-- CENTERED PRODUCT IMAGE -->
 
-  <!-- THREE AUTOPLAY LOOPING VIDEOS -->
+  <img
+    class="hero-product"
+    src="product-image.webp"
+    alt="One Beauty Stop Signature Color and Highlight Kit"
+    loading="lazy"
+  >
 
-  <div class="video-grid">
+  <!-- PRODUCT SECTION SOCIAL MEDIA LINKS -->
 
-    <!-- VIDEO 1 -->
-
-    <article class="video-card">
-
-      <video
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-label="One Beauty Stop product showcase video 1"
-      >
-        <source src="video1.mp4" type="video/mp4">
-
-        Your browser does not support video playback.
-
-      </video>
-
-    </article>
-
-    <!-- VIDEO 2 -->
-
-    <article class="video-card">
-
-      <video
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-label="One Beauty Stop product showcase video 2"
-      >
-        <source src="video2.mp4" type="video/mp4">
-
-        Your browser does not support video playback.
-
-      </video>
-
-    </article>
-
-    <!-- VIDEO 3 -->
-
-    <article class="video-card">
-
-      <video
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        aria-label="One Beauty Stop product showcase video 3"
-      >
-        <source src="video3.mp4" type="video/mp4">
-
-        Your browser does not support video playback.
-
-      </video>
-
-    </article>
-
-  </div>
-
-  <!-- PAUSE / PLAY ALL VIDEOS -->
-
-  <div class="video-controls">
-
-    <button
-      type="button"
-      class="playback-button"
-      id="playback-toggle"
-    >
-      &#9654; Play videos
-    </button>
-
-  </div>
-
-  <!-- VIDEO SECTION SOCIAL MEDIA LINKS -->
-
-  <div class="video-social">
+  <div class="product-social">
 
     <div class="social-links">
 
